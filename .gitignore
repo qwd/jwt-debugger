@@ -4,7 +4,6 @@ dist
 dist-ssr
 coverage
 *.local
-package-lock.json
 
 # Editor directories and files
 .idea
@@ -33,5 +32,3 @@ lerna-debug.log*
 
 /cypress/videos/
 /cypress/screenshots/
-
-src/translate/lang
