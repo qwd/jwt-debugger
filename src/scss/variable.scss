@@ -1,0 +1,35 @@
+:root {
+  --font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+  --font-code-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', 'monospace';
+  --primary-red: #e94829;
+  --primary-pink: #ff15c1;
+  --primary-teal: #2bcecb;
+  --text-white: #ffffff;
+  --text-grey: #888888;
+}
+
+.qweather-theme--light {
+  --primary-blue: #0f9aff;
+  --primary-green: #3cc95b;
+  --primary-orange: #f7931a;
+  --primary-purple: #b548ec;
+  --text-title: #111111;
+  --text-default: #333333;
+  --text-qGray: #606d73;
+  --background-main: #ffffff;
+  --background-popup: #fafafa;
+  --border-block: #bcbcbc;
+}
+
+.qweather-theme--dark {
+  --primary-blue: #007aff;
+  --primary-green: #84a729;
+  --primary-orange: #e18a3b;
+  --primary-purple: #ba79b1;
+  --text-title: #f4f4f4;
+  --text-default: #eaeaea;
+  --text-qGray: #afb8bb;
+  --background-main: #202325;
+  --background-popup: #404040;
+  --border-block: #555555;
+}

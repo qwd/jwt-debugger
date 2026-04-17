@@ -1,0 +1,29 @@
+{
+  "name": "jwt-html",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tsconfig/node20": "^20.1.9",
+    "@types/node": "^25.6.0",
+    "esbuild": "^0.27.4",
+    "eslint": "^10.2.0",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.1",
+    "sass": "^1.98.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.1",
+    "vite-plugin-remove-console": "^2.2.0",
+    "vite-plugin-singlefile": "^2.3.2"
+  },
+  "engines": {
+    "node": ">= 20.19.0",
+    "npm": ">= 10.8.2"
+  }
+}

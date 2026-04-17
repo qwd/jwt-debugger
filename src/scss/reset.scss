@@ -1,0 +1,81 @@
+@use './variable.scss';
+
+html,
+body,
+#app {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-family);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: transparent;
+  background-color: var(--background-main);
+}
+
+a {
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+    outline-offset: 0;
+  }
+}
+
+html,
+body,
+a,
+br,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ol,
+p,
+span,
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+html,
+body,
+a,
+br,
+div,
+li,
+ol,
+p,
+span,
+ul {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+li,
+ol,
+ul {
+  list-style-type: none;
+}
+
+input {
+  outline: none;
+}
+
+.code-family {
+  font-family: var(--font-code-family) !important;
+}
