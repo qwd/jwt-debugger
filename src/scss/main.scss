@@ -400,5 +400,13 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    &::placeholder {
+      font-family: var(--font-family);
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--text-grey);
+    }
   }
 }

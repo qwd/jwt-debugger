@@ -261,6 +261,7 @@ export const initJwt = (app: HTMLElement, keyPair: CryptoKeyPair): Promise<void>
         privateKeyTextarea.setAttribute('spellcheck', 'false');
         privateKeyTextarea.setAttribute('rows', '1');
         privateKeyTextarea.value = createInfo.privateKeyPem;
+        privateKeyTextarea.placeholder = translate.desc.txt6;
         const syncHeight = (): void => {
           privateKeyTextarea.style.height = 'auto';
           const currentScrollHeight = privateKeyTextarea.scrollHeight;

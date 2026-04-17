@@ -12,6 +12,7 @@ export const en = {
     txt3: '⚠️ See <a target="_blank" href="https://dev.qweather.com/en/docs/configuration/authentication/">QWeather JWT Authentication</a> before use. This tool cannot replace JWT generation in code. To validate a JWT against your account, use the <a target="_blank" href="https://console.qweather.com/support/jwt-validation?lang=en">JWT Validation Tool</a> in the Console.',
     txt4: '⬆️ A browser update is required to run this tool',
     txt5: 'Report issues on Github',
+    txt6: 'Ed25519 private key in PEM format.',
   },
   result: {
     success: {

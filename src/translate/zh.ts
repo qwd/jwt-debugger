@@ -12,6 +12,7 @@ export const zh = {
     txt3: '⚠️ 用前必看<a target="_blank" href="https://dev.qweather.com/docs/configuration/authentication/">和风天气 JWT 身份认证</a>。本工具无法代替生成 JWT 的代码。控制台提供了<a target="_blank" href="https://console.qweather.com/support/jwt-validation">JWT验证工具</a>。',
     txt4: '⬆️ 需要升级浏览器才能运行这个工具',
     txt5: '在 Github 报告问题',
+    txt6: '在此粘贴Ed25519私钥，PEM格式。',
   },
   result: {
     success: {
