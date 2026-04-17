@@ -31,13 +31,15 @@ export class CodeCard {
 
     this.#copyBtn = document.createElement('button');
     this.#copiedBtn = document.createElement('button');
-    const btnPublicClassName = `q-button q-txt font-20 line-20 nowrap`;
+    const btnPublicClassName = `q-button q-txt font-18 nowrap`;
     this.#copyBtn.className = `${btnPublicClassName} color-grey`;
     this.#copiedBtn.className = `${btnPublicClassName} color-primary-green`;
     this.#copyBtn.textContent = '⧉';
     this.#copiedBtn.textContent = '✓';
     this.#copyBtn.style.flex = this.#copiedBtn.style.flex = '0 0 20px';
     this.#copyBtn.style.width = this.#copiedBtn.style.width = '0';
+    this.#copyBtn.style.lineHeight = this.#copiedBtn.style.lineHeight = '1.2'
+
     this.#copyBtn.style.display = 'block';
     this.#copiedBtn.style.display = 'none';
     if (this.#copyTxt === '') {
