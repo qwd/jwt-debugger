@@ -4,7 +4,7 @@
 
 这是一个适用于[和风天气开发者服务](https://dev.qweather.com/)的 JWT 调试工具，支持生成 Ed25519 密钥和创建 JWT。本工具基于 [Web Cryptography API](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API) 实现，所有处理均在本地浏览器中完成，无任何网络请求，输入及生成的数据不会被上传或存储，仅在本地可见。
 
-直接访问 👉 **<https://jwt-debugger.qweather.com>**
+直接访问 👉 **<https://jwt.qweather.com>**
 
 ## 🌐 浏览器支持
 
@@ -53,7 +53,7 @@ npm run build
 
 This is a JWT debugging tool for [QWeather Developer Services](https://dev.qweather.com/en/). It supports generating Ed25519 key and creating JWT. The tool is built on the [Web Cryptography API](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API) and runs entirely in the browser, with no network requests. All inputs and generated data remain local and are not transmitted or stored.
 
-Go 👉 **<https://jwt-debugger.qweather.com>**
+Go 👉 **<https://jwt.qweather.com>**
 
 ## 🌐 Browser Support
 
