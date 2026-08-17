@@ -3,6 +3,7 @@ export interface JsonInfo {
   sub?: string;
   iat?: string;
   exp?: string;
+  iss?: string;
 }
 
 export class JsonCard {

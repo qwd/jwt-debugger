@@ -12,6 +12,7 @@ enum ErrorType {
   EXP_TOO_EARLY = '6',
   EXP_EARLY_THAN_IAT = '7',
   JWT_TOO_LONG = '8',
+  ISS_ERROR = '9',
   OTHER = '9999',
 }
 
@@ -20,6 +21,7 @@ const createInfo = {
   sub: '12345ABCDE',
   iat: '',
   exp: '',
+  iss: 'Q1234ABCDE',
   privateKeyPem: '',
 };
 
@@ -83,12 +85,18 @@ const createJwtInfo = (): Promise<{ jwt: string; jwtList: string[] }> => {
           createJwtResult.errorType = ErrorType.JWT_TOO_LONG;
           return reject(null);
         }
+        if (createInfo.iss === '' || IdReg.test(createInfo.iss) === false) {
+          createJwtResult.success = false;
+          createJwtResult.errorType = ErrorType.ISS_ERROR;
+          return reject(null);
+        }
 
         generateJWT(privateKey, {
           kid: createInfo.kid,
           sub: createInfo.sub,
           iat: createInfo.iat,
           exp: createInfo.exp,
+          iss: createInfo.iss,
         })
           .then(jwt => {
             createJwtResult.success = true;
@@ -120,6 +128,9 @@ const changed = (info: JsonInfo) => {
   }
   if (typeof info.exp !== 'undefined' && createInfo.exp !== info.exp) {
     createInfo.exp = info.exp;
+  }
+  if (typeof info.iss !== 'undefined' && createInfo.iss !== info.iss) {
+    createInfo.iss = info.iss;
   }
 
   changeJwtResult();
@@ -159,6 +170,8 @@ const createResultHtml = () => {
       resultDesc.innerHTML = translate.result.error.txt7;
     } else if (createJwtResult.errorType === ErrorType.JWT_TOO_LONG) {
       resultDesc.innerHTML = translate.result.error.txt8;
+    } else if (createJwtResult.errorType === ErrorType.ISS_ERROR) {
+      resultDesc.innerHTML = translate.result.error.txt10;
     } else {
       resultDesc.innerHTML = translate.result.error.txt9;
     }
@@ -233,6 +246,7 @@ export const initJwt = (app: HTMLElement, keyPair: CryptoKeyPair): Promise<void>
             { key: 'sub', value: createInfo.sub, edit: true },
             { key: 'iat', value: createInfo.iat, edit: true },
             { key: 'exp', value: createInfo.exp, edit: true },
+            { key: 'iss', value: createInfo.iss, edit: true },
           ],
           target: qCard,
           className: 'q-margin top-10',

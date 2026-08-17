@@ -99,6 +99,7 @@ export const generateJWT = (
     sub: string; //项目ID
     iat: string; //起始时间 秒级时间戳 Math.floor(Date.now() / 1000);
     exp: string; //到期时间 秒级时间戳 issuedAt + 60 * 60 * 24;
+    iss: string; //Qid
   }
 ): Promise<string> => {
   return new Promise((resolve, reject) => {
@@ -113,7 +114,7 @@ export const generateJWT = (
     }
     const header = { alg: 'EdDSA', kid: params.kid };
     const encodedHeader = base64url(JSON.stringify(header));
-    const payload = { sub: params.sub, iat: Number(params.iat), exp: Number(params.exp) };
+    const payload = { sub: params.sub, iat: Number(params.iat), exp: Number(params.exp), iss: params.iss };
     const encodedPayload = base64url(JSON.stringify(payload));
     const message = `${encodedHeader}.${encodedPayload}`;
     crypto.subtle
