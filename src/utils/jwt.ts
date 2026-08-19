@@ -107,7 +107,7 @@ export const generateJWT = (
       keyIds.set(privateKey, `key-${keyCount++}`);
     }
     const keyId = keyIds.get(privateKey) as string;
-    const cacheJwtKey = `${keyId}-${params.kid}-${params.sub}-${params.iat}-${params.exp}`;
+    const cacheJwtKey = `${keyId}-${params.kid}-${Object.values(params).join('-')}`;
     if (cacheJwt.has(cacheJwtKey)) {
       resolve(cacheJwt.get(cacheJwtKey) as string);
       return;
