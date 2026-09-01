@@ -29,7 +29,7 @@ export const en = {
       txt7: '❌ exp must be later than iat.',
       txt8: '❌ The JWT expiration time cannot be longer than 24 hours.',
       txt9: '❌ An unexpected error has occurred.',
-      txt10: '❌ iss should be a 10-character capital letters and numbers string.'
+      txt10: '❌ iss should be a 10-character string beginning with Q.'
     },
   },
 };

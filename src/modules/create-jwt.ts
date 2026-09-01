@@ -35,7 +35,7 @@ const createJwtInfo = (): Promise<{ jwt: string; jwtList: string[] }> => {
   return new Promise((resolve, reject) => {
     importPrivatePem(createInfo.privateKeyPem)
       .then(privateKey => {
-        const IdReg = /^(?=.*[A-Z])(?=.*\d)[A-Z0-9]{10}$/;
+        const IdReg = /^[A-Z0-9]{10}$/;
         if (createInfo.kid === '' || IdReg.test(createInfo.kid) === false) {
           createJwtResult.success = false;
           createJwtResult.errorType = ErrorType.KID_FORMAT_ERROR;
@@ -85,7 +85,8 @@ const createJwtInfo = (): Promise<{ jwt: string; jwtList: string[] }> => {
           createJwtResult.errorType = ErrorType.JWT_TOO_LONG;
           return reject(null);
         }
-        if (createInfo.iss === '' || IdReg.test(createInfo.iss) === false) {
+        const IssReg = /^Q[A-Z0-9]{9}$/;
+        if (createInfo.iss === '' || IssReg.test(createInfo.iss) === false) {
           createJwtResult.success = false;
           createJwtResult.errorType = ErrorType.ISS_ERROR;
           return reject(null);
