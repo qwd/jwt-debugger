@@ -35,7 +35,7 @@ const createJwtInfo = (): Promise<{ jwt: string; jwtList: string[] }> => {
   return new Promise((resolve, reject) => {
     importPrivatePem(createInfo.privateKeyPem)
       .then(privateKey => {
-        const IdReg = /^(?=.*[A-Z])(?=.*\d)[A-Z0-9]{10}$/;
+        const IdReg = /^(?=.*[A-Z])[A-Z0-9]{10}$/;
         if (createInfo.kid === '' || IdReg.test(createInfo.kid) === false) {
           createJwtResult.success = false;
           createJwtResult.errorType = ErrorType.KID_FORMAT_ERROR;
